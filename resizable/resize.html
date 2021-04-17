@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resize Property</title>
+</head>
+<style>
+    .box{
+        height: 50vh;
+        width: 50vw;
+        margin: 10px auto;
+        background-color: red;
+        text-align: center;
+        color: #fff;
+        position: relative;
+    }
+    .col-resizer{
+        position: absolute;
+        right: 0;
+        top : 0;
+        background-color: #ccc;
+        width: 10px;
+        height: 100%;
+        cursor: col-resize;
+        z-index: 10;
+    }
+</style>
+<body>
+    <div class="box">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod amet ab nesciunt hic dolore, odio earum fuga autem numquam laborum, alias repellendus dolor! Dolorem placeat nihil repellat quasi minus quam.
+        <div class="col-resizer"></div>
+    </div>
+</body>
+<script>
+    const handle = document.querySelector(".col-resizer");
+    const box = document.querySelector(".box");
+
+    const mouseMoveHandler = function(e) {
+        box.style.width = e.pageX - box.getBoundingClientRect().left + 'px';
+    }
+
+    const mouseUpHandler = function() {
+        // Remove the handlers of `mousemove` and `mouseup`
+        document.removeEventListener('mousemove', mouseMoveHandler);
+        document.removeEventListener('mouseup', mouseUpHandler);
+    };
+
+    const mouseDownHandler = e => {
+        document.addEventListener('mousemove', mouseMoveHandler);
+        document.addEventListener('mouseup', mouseUpHandler);
+    }
+
+    handle.addEventListener('mousedown' , mouseDownHandler);
+
+    
+</script>
+</html>

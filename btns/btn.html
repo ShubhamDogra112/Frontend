@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Btn effects</title>
+</head>
+<style>
+    body{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        width:100vw;
+        height:100vh;
+
+    }
+    button{
+        width:200px;
+        height:50px;
+        margin:10px;
+        border:none;
+        outline:none;
+        transition: 0.8s;
+    }
+
+    .left{
+        border:5px solid red;
+        background-image: linear-gradient(90deg, transparent 50%, red 50%);
+        background-size: 400px 50px;        
+    }
+    .left:hover{
+        background-position: 200px 50px;
+        color:#fff;
+    }
+
+    .right{
+        border:5px solid red;
+        background-image: linear-gradient(90deg, transparent 50%, red 50%);
+        background-size: 400px 50px;
+
+    }
+    .right:hover{
+        background-position: -200px 50px;
+        color:#fff;
+    }
+    
+    .top{
+        border:5px solid red;
+        background-image: linear-gradient(transparent 50%, red 50%);
+        background-size: 200px 100px;        
+    }
+    .top:hover{
+        background-position: 200px 50px;
+        color:#fff;
+
+    }
+    
+    .bottom{
+        border:5px solid red;
+        background-image: linear-gradient(transparent 50%, red 50%);
+        background-size: 200px 100px;        
+    }
+    .bottom:hover{
+        background-position: 200px -50px;
+        color:#fff;
+    }
+</style>
+<body>
+    <button class="left">Left</button>
+    <button class="right">Right</button>
+    <button class="top">top</button>
+    <button class="bottom">Bottom</button>
+</body>
+</html>
