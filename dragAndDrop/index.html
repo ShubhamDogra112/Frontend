@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<style>
+.mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  height: 20vh;
+  border-radius: 50%;
+  width: 20vh;
+  background-color: #ccc;
+}
+</style>
+<body>
+
+<div class="mydiv">
+</div>
+
+<script>
+//Make the DIV element draggagle:
+let box = document.querySelector(".mydiv");
+
+const mouseDownHandler = e => {
+    // get the mouse cursor position at startup:
+    xi = e.clientX;
+    yi = e.clientY;
+    console.log(box.offsetLeft + " starting");
+    document.addEventListener('mouseup',onMouseUpHandler);
+    document.addEventListener('mousemove',mouseMoveHandler);
+  }
+
+const onMouseUpHandler = () => {
+    /* stop moving when mouse button is released:*/
+    document.removeEventListener('mouseup',onMouseUpHandler);
+    document.removeEventListener('mousemove',mouseMoveHandler);
+}
+const mouseMoveHandler = (e) => {
+    // calculate the new cursor position:
+    xf = xi - e.clientX;  //moves in right direction gives -ve value
+    yf = yi - e.clientY;  //moves in upward direction give -ve value
+    xi = e.clientX;
+    yi = e.clientY;
+    // set the element's new position:
+    box.style.top = (box.offsetTop - yf) + "px";
+    box.style.left = (box.offsetLeft - xf) + "px";
+}
+
+let xf = 0, yf = 0, xi = 0, yi = 0;
+/* otherwise, move the DIV from anywhere inside the DIV:*/
+box.addEventListener('mousedown',mouseDownHandler);  
+</script>
+
+</body>
+</html>
