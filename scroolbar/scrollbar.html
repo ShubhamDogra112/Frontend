@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom ScrollBar</title>
+    <style>
+        .body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper{
+            height: 200px;
+            width: 300px;
+            padding: 1rem;
+            overflow-y: scroll;
+            margin: 5rem auto;
+            line-height: 18px;
+            /* scrollbar-color: #777 #ededed; */
+        }
+
+        /* works only in chrome and safari */
+        ::-webkit-scrollbar-thumb{
+            background-color: #777;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:active{
+            background-color: #000;
+        }
+
+        /* ::-webkit-scrollbar-thumb:hover{
+            background-color: #777;
+        } */
+        ::-webkit-scrollbar{
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track{
+            background-color: #dedede;
+            border-radius: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et deleniti exercitationem optio sunt voluptas eius, reprehenderit doloremque. Error, harum? Quaerat provident tenetur dignissimos rerum odit fugiat quae libero! Quidem, atque
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis modi esse ipsam facilis, voluptas quae dolorum, laudantium tempora ab sapiente cupiditate ipsa explicabo consectetur, eveniet maxime voluptatem porro odit aliquam?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et deleniti exercitationem optio sunt voluptas eius, reprehenderit doloremque. Error, harum? Quaerat provident tenetur dignissimos rerum odit fugiat quae libero! Quidem, atque
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis modi esse ipsam facilis, voluptas quae dolorum, laudantium tempora ab sapiente cupiditate ipsa explicabo consectetur, eveniet maxime voluptatem porro odit aliquam?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et deleniti exercitationem optio sunt voluptas eius, reprehenderit doloremque. Error, harum? Quaerat provident tenetur dignissimos rerum odit fugiat quae libero! Quidem, atque
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis modi esse ipsam facilis, voluptas quae dolorum, laudantium tempora ab sapiente cupiditate ipsa explicabo consectetur, eveniet maxime voluptatem porro odit aliquam?
+    </div>
+</body>
+</html>
