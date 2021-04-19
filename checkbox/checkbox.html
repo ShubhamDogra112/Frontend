@@ -22,9 +22,11 @@
 
     .wrapper div{
         display: flex;
-        justify-content:space-between;
+        justify-content:center;
         align-items:center;
-        width: 150px;
+        width: 40vw;
+        height: 40vh;
+        background-color: #eee;
     }
 
     .checkbox{
@@ -49,12 +51,31 @@
         display: none;
     }
 
+    /*ripple effect*/
+    .checkbox::before{
+        position: absolute;
+        content:'';
+        left:50%;
+        top:50%;
+        background-color: #777;
+        transform: translate(-50% , -50%) scale(2);
+        padding: 50%;
+        border-radius: 50%;
+        opacity:0;
+        transition: transform 0.4s, opacity 0.6s;
+    }
+
     .checkbox:checked{
         background-color: #5bcd36;
     }
 
     .checkbox:checked::after{
         display: block;
+    }
+    .checkbox:active::before{
+        transition:0s;
+        transform: translate(-50% ,-50%) scale(0);
+        opacity: 1;
     }    
 </style>
 <body>

@@ -1,0 +1,49 @@
+*,*::after,*::before{
+    margin: 0;
+    padding:0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    box-sizing: border-box;
+    display: flex;
+    height:100vh;
+    width:100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit{
+    background-color: #ff4444;
+    padding:2rem 2.5rem;
+    border:none;
+    outline:none;
+    color:#fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 10px;
+    position: relative;
+    overflow:hidden;
+}
+
+.ripple{
+    position: absolute;
+    padding: 50%;
+    left: var(--ripple-x);
+    top: var(--ripple-y);
+    background-color: #eee;
+    transform: translate(-50% , -50%) scale(2);
+    border-radius: 50%;
+    opacity:0;
+    transition: transform 1s, opacity 1s;
+}
+
+.submit:active .ripple{
+    transition:0s;
+    transform: translate(-50% ,-50%) scale(0);
+    opacity: 1;
+}
